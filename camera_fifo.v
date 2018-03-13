@@ -1,11 +1,11 @@
-module camera_fifo(clk, reset, tx, rx, dataout, rd, rclk, empy, dato, full);
+module camera_fifo(clk, reset, tx, rx, datout, rd, rclk, empy, dato, full);
 	input rx;
 	input reset;
 	output tx;
 	input clk;
 	input rst;
 	
-	input rclk = 0;
+	input rclk;
 	input rd;
 	input [7:0] datout;
 	
@@ -53,12 +53,7 @@ module camera_fifo(clk, reset, tx, rx, dataout, rd, rclk, empy, dato, full);
 		.tx_busy(tx_busy)
 	);
 	
-	initial begin
-		tx_data <= 8'hA0;
-		tx_wr <= 1;
-	end
-	
-	always @(negedge rx_busy) begin
+	/*always @(negedge rx_busy) begin
 		if(rx_avail == 1) begin
 			datin <= rx_data;
 			wr <= 1;
@@ -69,7 +64,19 @@ module camera_fifo(clk, reset, tx, rx, dataout, rd, rclk, empy, dato, full);
 	always @(posedge rx_busy) begin
 		wclk <= 0;
 		wr <= 0;
+	end*/
+	
+	always @(posedge clk) begin
+		if(rx_avail == 1 && rx_busy == 1) begin
+			datin <= rx_data;
+			wr <= 1;
+			wclk <= 1;
+		end else begin
+			wclk <= 0;
+			wr <= 0;
+		end
 	end
+			
 	
 endmodule
 			

@@ -14,7 +14,7 @@ module FIFO(wclk,wr,datin,rclk,rd,datout,full,empy,dato,rst);
 //Parameters
 
 parameter dato_width = 8;
-parameter fifo_length = 5;
+parameter fifo_length = 53;
 
 // Registers	
 	reg [dato_width-1:0] f [0:fifo_length-1];
