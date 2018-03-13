@@ -1,21 +1,21 @@
-module camera_fifo(clk, reset, tx, rx);
+module camera_fifo(clk, reset, tx, rx, dataout, rd, rclk, empy, dato, full);
 	input rx;
 	input reset;
 	output tx;
 	input clk;
 	input rst;
 	
+	input rclk = 0;
+	input rd;
+	input [7:0] datout;
+	
+	input full;
+	input empy;
+	input dato;
+	
 	reg wclk = 0;
 	reg wr;
 	reg [7:0] datin;
-	
-	reg rclk = 0;
-	reg rd;
-	wire [7:0] datout;
-	
-	wire full;
-	wire empy;
-	wire dato;
 	
 	FIFO fifo(
 		.wclk(wclk), 
