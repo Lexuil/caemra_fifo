@@ -1,27 +1,28 @@
-module camera_fifo(clk, reset, tx, rx, datout, rd, rclk, empy, dato, full);
+module camera_fifo(clk, tx, rx, datout, rclk, rd, empy, dato, full);
 	input rx;
-	input reset;
+	reg reset = 0;
 	output tx;
 	input clk;
-	input rst;
 	
 	input rclk;
 	input rd;
-	input [7:0] datout;
+	output [7:0] datout;
 	
-	input full;
-	input empy;
-	input dato;
+	output full;
+	output empy;
+	output dato;
 	
 	reg wclk = 0;
-	reg wr;
+	reg wr = 0;
 	reg [7:0] datin;
+	reg rst = 0;
 	
 	FIFO fifo(
 		.wclk(wclk), 
 		.wr(wr), 
 		.datin(datin), 
-		.rclk(rclk), .rd(rd), 
+		.rclk(rclk), 
+		.rd(rd), 
 		.datout(datout), 
 		.full(full), 
 		.empy(empy), 
@@ -29,9 +30,8 @@ module camera_fifo(clk, reset, tx, rx, datout, rd, rclk, empy, dato, full);
 		.rst(rst)
 	);
 	
-	reg resetu;
 	wire [7:0] rx_data;
-	reg [7:0] tx_data;
+	reg [7:0] tx_data = 8'h00;
 	reg tx_wr;
 	wire rx_avail;
 	wire rx_busy;
@@ -71,41 +71,16 @@ module camera_fifo(clk, reset, tx, rx, datout, rd, rclk, empy, dato, full);
 			datin <= rx_data;
 			wr <= 1;
 			wclk <= 1;
-		end else begin
+		end else if(~rd) begin
+			wr <= 1;
 			wclk <= 0;
+		end
+
+		if(full || rd) begin
 			wr <= 0;
+			wclk <= 0;
 		end
 	end
 			
 	
 endmodule
-			
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

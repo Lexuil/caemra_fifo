@@ -21,9 +21,9 @@ parameter fifo_length = 53;
 	
 	reg orwr;
 	
-	reg [2:0] cont = 0;
-	reg [2:0] contw = 0;
-	reg [2:0] contr = 0;
+	reg [5:0] cont = 0;
+	reg [5:0] contw = 0;
+	reg [5:0] contr = 0;
 	
 	always @(posedge wclk) begin
 		if(wr == 1 && (~full)) begin
