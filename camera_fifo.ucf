@@ -1,17 +1,13 @@
 #OSC
 NET "clk"       LOC = "P84" | IOSTANDARD = LVCMOS33;
 
-#LEDs
-
-
 #UART
 NET "rx" LOC = P79;
 NET "tx" LOC = P81;
-#NET "reset" LOC = P83;
+NET "reset" LOC = P102;
 
 #Read
-NET "rclk" LOC = P102;
-NET "rd" LOC = P83;
+NET "rclk" LOC = P83;
 NET "datout<0>" LOC = P78;
 NET "datout<1>" LOC = P80;
 NET "datout<2>" LOC = P82;
@@ -25,5 +21,3 @@ NET "datout<7>" LOC = P101;
 NET "full" LOC = P93;
 NET "dato" LOC = P95;
 NET "empy" LOC = P99;
-
-NET "rclk" CLOCK_DEDICATED_ROUTE = FALSE;
