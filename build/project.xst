@@ -1,6 +1,6 @@
 run
 -top camera_fifo 
--p xc6slx4-3tqg144
+-p xc6slx4-2tqg144
 -opt_mode Area
 -opt_level 1
 -ifn project.src

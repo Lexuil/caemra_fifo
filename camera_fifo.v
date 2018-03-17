@@ -11,26 +11,10 @@ module camera_fifo(clk, reset, tx, rx, datout, rclk, empy, dato, full);
 	output empy;
 	output dato;
 	
-	reg wclk = 0;
-	reg wr = 0;
-	reg [7:0] datin;
+	wire wclk;
+	reg [7:0] datin = 8'h00;
 	reg rst = 0;
-	
-	FIFO #(
-		.DATO_WIDTH(8),
-		.FIFO_LENGTH(53)
 
-	) fifo(
-		.wclk(wclk),
-		.datin(datin), 
-		.rclk(rclk),
-		.datout(datout), 
-		.full(full), 
-		.empy(empy), 
-		.dato(dato), 
-		.rst(reset)
-	);
-	
 	wire [7:0] rx_data;
 	reg [7:0] tx_data = 8'h00;
 	reg tx_wr = 0;
@@ -38,6 +22,21 @@ module camera_fifo(clk, reset, tx, rx, datout, rclk, empy, dato, full);
 	wire rx_busy;
 	wire tx_busy;
 	wire rx_error;
+	
+	FIFO #(
+		.DATO_WIDTH(8),
+		.FIFO_LENGTH(53)
+
+	) fifo(
+		.wclk(wclk),
+		.datin(rx_data), 
+		.rclk(rclk),
+		.datout(datout), 
+		.full(full), 
+		.empy(empy), 
+		.dato(dato), 
+		.rst(reset)
+	);
 	
 	
 	uart peri(
@@ -68,15 +67,24 @@ module camera_fifo(clk, reset, tx, rx, datout, rclk, empy, dato, full);
 		wclk <= 0;
 		wr <= 0;
 	end*/
-	
+
+	reg w = 0;
+	assign wclk = ~rx_busy & w;
+
 	always @(posedge clk) begin
-		if(rx_avail && ~rx_error) begin
-			datin <= rx_data;
-			wclk <= ~rx_busy;
+		if(~rx_busy) begin
+			w <= 0;
 		end else begin
-			wclk <= 0;
+			w <= 1;
 		end
 	end
-			
+/*
+	always @(posedge clk) begin
+		if (rx_avail && ~rx_error && ~rx_busy) begin
+			tx_data <= rx_data;
+
+		end
+	end
+		*/	
 	
 endmodule

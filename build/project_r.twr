@@ -1,0 +1,112 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -v 25 project_r.ncd
+project.pcf
+
+Design file:              project_r.ncd
+Physical constraint file: project.pcf
+Device,package,speed:     xc6slx4,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report, limited to 25 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+rx          |   -0.424(R)|      SLOW  |    2.001(R)|      SLOW  |clk_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock rclk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+datout<0>   |        13.281(R)|      SLOW  |         5.878(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<1>   |        13.274(R)|      SLOW  |         5.871(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<2>   |        13.278(R)|      SLOW  |         5.875(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<3>   |        13.286(R)|      SLOW  |         5.883(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<4>   |        13.286(R)|      SLOW  |         5.883(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<5>   |        13.282(R)|      SLOW  |         5.879(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<6>   |        13.340(R)|      SLOW  |         5.937(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<7>   |        13.336(R)|      SLOW  |         5.933(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock reset to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+datout<0>   |        13.408(R)|      SLOW  |         5.918(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<1>   |        13.401(R)|      SLOW  |         5.911(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<2>   |        13.405(R)|      SLOW  |         5.915(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<3>   |        13.413(R)|      SLOW  |         5.923(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<4>   |        13.413(R)|      SLOW  |         5.923(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<5>   |        13.409(R)|      SLOW  |         5.919(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<6>   |        13.467(R)|      SLOW  |         5.977(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<7>   |        13.463(R)|      SLOW  |         5.973(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    7.356|         |         |         |
+reset          |    7.680|    7.680|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock rclk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    9.774|         |         |         |
+rclk           |    9.509|    5.293|         |         |
+reset          |    9.509|    5.511|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock reset
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    9.774|         |         |         |
+rclk           |    9.509|    5.175|         |         |
+reset          |    9.509|    5.393|         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Fri Mar 16 19:01:25 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 390 MB
+
+
+
