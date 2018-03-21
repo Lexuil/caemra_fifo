@@ -29,10 +29,13 @@
 <msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/uart.v" Line 140: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 55: Assignment to <arg fmt="%s" index="1">tx_busy</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 50: Assignment to <arg fmt="%s" index="1">rx_avail</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 74: Assignment to <arg fmt="%s" index="1">datin</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 51: Assignment to <arg fmt="%s" index="1">rx_error</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 55: Assignment to <arg fmt="%s" index="1">tx_busy</arg> ignored, since the identifier is never used
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="552" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 42: Input port <arg fmt="%s" index="1">rx_ack</arg> is not connected on this instance

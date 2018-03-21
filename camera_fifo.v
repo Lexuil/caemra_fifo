@@ -78,7 +78,14 @@ module camera_fifo(clk, reset, tx, rx, datout, rclk, empy, dato, full);
 			w <= 1;
 		end
 	end
-/*
+
+	/*
+
+	always @(*) begin
+		tx_data <= rx_data;
+		tx_wr <= wclk;
+	end
+
 	always @(posedge clk) begin
 		if (rx_avail && ~rx_error && ~rx_busy) begin
 			tx_data <= rx_data;

@@ -75,8 +75,9 @@ WARNING:HDLCompiler:413 - "/home/lexuil/Documents/Github/camera_fifo/uart.v" Lin
 WARNING:HDLCompiler:413 - "/home/lexuil/Documents/Github/camera_fifo/uart.v" Line 91: Result of 5-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:413 - "/home/lexuil/Documents/Github/camera_fifo/uart.v" Line 137: Result of 5-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:413 - "/home/lexuil/Documents/Github/camera_fifo/uart.v" Line 140: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 50: Assignment to rx_avail ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 51: Assignment to rx_error ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 55: Assignment to tx_busy ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 74: Assignment to datin ignored, since the identifier is never used
 WARNING:HDLCompiler:552 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 42: Input port rx_ack is not connected on this instance
 
 =========================================================================
@@ -639,14 +640,14 @@ fifo/orwr      |    6.899|         |         |         |
 
 
 Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.35 secs
+Total CPU time to Xst completion: 12.12 secs
  
 --> 
 
 
-Total memory usage is 405940 kilobytes
+Total memory usage is 405920 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   35 (   0 filtered)
+Number of warnings :   36 (   0 filtered)
 Number of infos    :    4 (   0 filtered)
 

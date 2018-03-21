@@ -27,7 +27,7 @@ end
 	
 always #1 clk <= ~clk;
 
-always begin
+initial begin
 	for(cont = 0; cont < 15; cont = cont + 1) begin
 		#2700;
 		rdx <= ~rdx;
@@ -46,7 +46,7 @@ end
 initial begin//: TEST_CASE
   $dumpfile("camera_fifo_TB.vcd");
   $dumpvars(-1, uut);
-  #80000 $finish;
+  #160000 $finish;
 
 
 
