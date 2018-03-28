@@ -61,7 +61,6 @@ Parsing module <FIFO>.
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 42: Port rx_ack is not connected to this instance
 
 Elaborating module <camera_fifo>.
 WARNING:HDLCompiler:872 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 19: Using initial value of tx_data since it is never assigned
@@ -75,10 +74,9 @@ WARNING:HDLCompiler:413 - "/home/lexuil/Documents/Github/camera_fifo/uart.v" Lin
 WARNING:HDLCompiler:413 - "/home/lexuil/Documents/Github/camera_fifo/uart.v" Line 91: Result of 5-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:413 - "/home/lexuil/Documents/Github/camera_fifo/uart.v" Line 137: Result of 5-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:413 - "/home/lexuil/Documents/Github/camera_fifo/uart.v" Line 140: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 50: Assignment to rx_avail ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 51: Assignment to rx_error ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 55: Assignment to tx_busy ignored, since the identifier is never used
-WARNING:HDLCompiler:552 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 42: Input port rx_ack is not connected on this instance
+WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 52: Assignment to rx_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 54: Assignment to rx_busy ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 57: Assignment to tx_busy ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -86,10 +84,9 @@ WARNING:HDLCompiler:552 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo
 
 Synthesizing Unit <camera_fifo>.
     Related source file is "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v".
-WARNING:Xst:2898 - Port 'rx_ack', unconnected in block instance 'peri', is tied to GND.
-INFO:Xst:3210 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" line 42: Output port <rx_avail> of the instance <peri> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" line 42: Output port <rx_error> of the instance <peri> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" line 42: Output port <tx_busy> of the instance <peri> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" line 43: Output port <rx_error> of the instance <peri> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" line 43: Output port <rx_busy> of the instance <peri> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" line 43: Output port <tx_busy> of the instance <peri> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <w>.
     Summary:
 	inferred   1 D-type flip-flop(s).
@@ -150,7 +147,7 @@ Synthesizing Unit <uart>.
     Summary:
 	inferred   5 Adder/Subtractor(s).
 	inferred  63 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   7 Multiplexer(s).
 Unit <uart> synthesized.
 
 =========================================================================
@@ -174,8 +171,8 @@ Macro Statistics
 # Comparators                                          : 3
  6-bit comparator greater                              : 1
  6-bit comparator lessequal                            : 2
-# Multiplexers                                         : 222
- 1-bit 2-to-1 multiplexer                              : 3
+# Multiplexers                                         : 227
+ 1-bit 2-to-1 multiplexer                              : 8
  16-bit 2-to-1 multiplexer                             : 1
  32-bit 2-to-1 multiplexer                             : 106
  6-bit 2-to-1 multiplexer                              : 2
@@ -213,9 +210,9 @@ Unit <FIFO> synthesized (advanced).
 Synthesizing (advanced) Unit <uart>.
 The following registers are absorbed into counter <enable16_counter>: 1 register on signal <enable16_counter>.
 The following registers are absorbed into counter <tx_count16>: 1 register on signal <tx_count16>.
-The following registers are absorbed into counter <rx_bitcount>: 1 register on signal <rx_bitcount>.
 The following registers are absorbed into counter <rx_count16>: 1 register on signal <rx_count16>.
 The following registers are absorbed into counter <tx_bitcount>: 1 register on signal <tx_bitcount>.
+The following registers are absorbed into counter <rx_bitcount>: 1 register on signal <rx_bitcount>.
 Unit <uart> synthesized (advanced).
 
 =========================================================================
@@ -232,8 +229,8 @@ Macro Statistics
 # Comparators                                          : 3
  6-bit comparator greater                              : 1
  6-bit comparator lessequal                            : 2
-# Multiplexers                                         : 219
- 1-bit 2-to-1 multiplexer                              : 3
+# Multiplexers                                         : 224
+ 1-bit 2-to-1 multiplexer                              : 8
  32-bit 2-to-1 multiplexer                             : 106
  8-bit 2-to-1 multiplexer                              : 109
  8-bit 53-to-1 multiplexer                             : 1
@@ -278,7 +275,6 @@ Optimizing unit <camera_fifo> ...
 Optimizing unit <uart> ...
 
 Optimizing unit <FIFO> ...
-WARNING:Xst:2677 - Node <peri/rx_avail> of sequential type is unconnected in block <camera_fifo>.
 WARNING:Xst:2677 - Node <peri/rx_error> of sequential type is unconnected in block <camera_fifo>.
 
 Mapping all equations...
@@ -293,8 +289,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 494
- Flip-Flops                                            : 494
+# Registers                                            : 495
+ Flip-Flops                                            : 495
 
 =========================================================================
 
@@ -317,22 +313,22 @@ Top Level Output File Name         : project.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 990
+# BELS                             : 991
 #      GND                         : 1
 #      INV                         : 16
 #      LUT1                        : 1
-#      LUT2                        : 11
-#      LUT3                        : 49
-#      LUT4                        : 10
-#      LUT5                        : 442
-#      LUT6                        : 428
+#      LUT2                        : 10
+#      LUT3                        : 52
+#      LUT4                        : 13
+#      LUT5                        : 500
+#      LUT6                        : 366
 #      MUXCY                       : 15
 #      VCC                         : 1
 #      XORCY                       : 16
-# FlipFlops/Latches                : 499
+# FlipFlops/Latches                : 500
 #      FD                          : 6
 #      FDE                         : 440
-#      FDR                         : 18
+#      FDR                         : 19
 #      FDRE                        : 28
 #      FDS                         : 2
 #      LD                          : 5
@@ -350,15 +346,15 @@ Selected Device : 6slx4tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             487  out of   4800    10%  
- Number of Slice LUTs:                  957  out of   2400    39%  
-    Number used as Logic:               957  out of   2400    39%  
+ Number of Slice Registers:             488  out of   4800    10%  
+ Number of Slice LUTs:                  958  out of   2400    39%  
+    Number used as Logic:               958  out of   2400    39%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    967
-   Number with an unused Flip Flop:     480  out of    967    49%  
-   Number with an unused LUT:            10  out of    967     1%  
-   Number of fully used LUT-FF pairs:   477  out of    967    49%  
+ Number of LUT Flip Flop pairs used:    968
+   Number with an unused Flip Flop:     480  out of    968    49%  
+   Number with an unused LUT:            10  out of    968     1%  
+   Number of fully used LUT-FF pairs:   478  out of    968    49%  
    Number of unique control sets:        14
 
 IO Utilization: 
@@ -390,7 +386,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 44    |
+clk                                | BUFGP                  | 45    |
 fifo/orwr(fifo/orwr1:O)            | BUFG(*)(fifo/cont_5)   | 450   |
 fifo/dato_G(fifo/dato_G:O)         | NONE(*)(fifo/dato)     | 1     |
 fifo/empy_G(fifo/empy_G:O)         | NONE(*)(fifo/empy)     | 2     |
@@ -410,7 +406,7 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 6.899ns (Maximum Frequency: 144.943MHz)
-   Minimum input arrival time before clock: 9.506ns
+   Minimum input arrival time before clock: 9.076ns
    Maximum output required time after clock: 4.174ns
    Maximum combinational path delay: No path found
 
@@ -420,10 +416,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.617ns (frequency: 151.126MHz)
-  Total number of paths / destination ports: 1162 / 77
+  Clock period: 6.655ns (frequency: 150.263MHz)
+  Total number of paths / destination ports: 1190 / 78
 -------------------------------------------------------------------------
-Delay:               6.617ns (Levels of Logic = 4)
+Delay:               6.655ns (Levels of Logic = 4)
   Source:            peri/enable16_counter_1 (FF)
   Destination:       peri/rx_data_7 (FF)
   Source Clock:      clk rising
@@ -436,12 +432,12 @@ Delay:               6.617ns (Levels of Logic = 4)
      FDR:C->Q              2   0.525   1.181  peri/enable16_counter_1 (peri/enable16_counter_1)
      LUT6:I0->O            1   0.254   0.790  peri/enable16<15>1 (peri/enable16<15>)
      LUT6:I4->O           13   0.250   1.098  peri/enable16<15>3 (peri/enable16)
-     LUT6:I5->O            3   0.254   0.766  peri/_n03661 (peri/_n0366)
+     LUT6:I5->O            4   0.254   0.804  peri/_n03951 (peri/_n0395)
      LUT6:I5->O            8   0.254   0.943  peri/_n0288_inv1 (peri/_n0288_inv)
      FDE:CE                    0.302          peri/rxd_reg_0
     ----------------------------------------
-    Total                      6.617ns (1.839ns logic, 4.778ns route)
-                                       (27.8% logic, 72.2% route)
+    Total                      6.655ns (1.839ns logic, 4.816ns route)
+                                       (27.6% logic, 72.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fifo/orwr'
@@ -460,8 +456,8 @@ Delay:               6.899ns (Levels of Logic = 4)
     ----------------------------------------  ------------
      FDRE:C->Q           128   0.525   2.403  fifo/contr_0 (fifo/contr_0)
      LUT3:I1->O           15   0.250   1.155  fifo/contr[5]_Decoder_300_OUT<10><5>11 (fifo/contr[5]_Decoder_300_OUT<10><5>1)
-     LUT6:I5->O            1   0.254   0.682  fifo/rclk_GND_2_o_mux_373_OUT<368>32 (fifo/rclk_GND_2_o_mux_373_OUT<368>32)
-     LUT5:I4->O            8   0.254   1.052  fifo/rclk_GND_2_o_mux_373_OUT<368>33 (fifo/rclk_GND_2_o_mux_373_OUT<368>3)
+     LUT6:I5->O            1   0.254   0.682  fifo/rclk_GND_2_o_mux_373_OUT<368>41 (fifo/rclk_GND_2_o_mux_373_OUT<368>41)
+     LUT5:I4->O            8   0.254   1.052  fifo/rclk_GND_2_o_mux_373_OUT<368>42 (fifo/rclk_GND_2_o_mux_373_OUT<368>4)
      LUT5:I3->O            1   0.250   0.000  fifo/rclk_GND_2_o_mux_373_OUT<375>1 (fifo/rclk_GND_2_o_mux_373_OUT<375>)
      FDE:D                     0.074          fifo/f_52_375
     ----------------------------------------
@@ -470,9 +466,9 @@ Delay:               6.899ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 45 / 45
+  Total number of paths / destination ports: 46 / 46
 -------------------------------------------------------------------------
-Offset:              6.265ns (Levels of Logic = 3)
+Offset:              6.266ns (Levels of Logic = 3)
   Source:            reset (PAD)
   Destination:       peri/rx_data_7 (FF)
   Destination Clock: clk rising
@@ -481,36 +477,36 @@ Offset:              6.265ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           183   1.328   2.398  reset_IBUF (reset_IBUF)
+     IBUF:I->O           184   1.328   2.399  reset_IBUF (reset_IBUF)
      LUT2:I1->O            1   0.254   0.790  peri/_n0273_inv_SW0 (N2)
      LUT6:I4->O            8   0.250   0.943  peri/_n0273_inv (peri/_n0273_inv)
      FDE:CE                    0.302          peri/rx_data_0
     ----------------------------------------
-    Total                      6.265ns (2.134ns logic, 4.131ns route)
+    Total                      6.266ns (2.134ns logic, 4.132ns route)
                                        (34.1% logic, 65.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fifo/orwr'
   Total number of paths / destination ports: 3434 / 905
 -------------------------------------------------------------------------
-Offset:              9.506ns (Levels of Logic = 5)
+Offset:              9.076ns (Levels of Logic = 5)
   Source:            rclk (PAD)
-  Destination:       fifo/f_52_319 (FF)
+  Destination:       fifo/f_52_383 (FF)
   Destination Clock: fifo/orwr rising
 
-  Data Path: rclk to fifo/f_52_319
+  Data Path: rclk to fifo/f_52_383
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           117   1.328   2.691  rclk_IBUF (rclk_IBUF)
-     LUT5:I0->O          101   0.254   2.667  fifo/rclk_GND_2_o_mux_373_OUT<0>111 (fifo/rclk_GND_2_o_mux_373_OUT<0>11)
-     LUT6:I0->O            1   0.254   0.682  fifo/rclk_GND_2_o_mux_373_OUT<184>41 (fifo/rclk_GND_2_o_mux_373_OUT<184>41)
-     LUT6:I5->O            8   0.254   1.052  fifo/rclk_GND_2_o_mux_373_OUT<184>42 (fifo/rclk_GND_2_o_mux_373_OUT<184>4)
-     LUT5:I3->O            1   0.250   0.000  fifo/rclk_GND_2_o_mux_373_OUT<191>1 (fifo/rclk_GND_2_o_mux_373_OUT<191>)
-     FDE:D                     0.074          fifo/f_52_191
+     IBUF:I->O           117   1.328   2.261  rclk_IBUF (rclk_IBUF)
+     LUT4:I3->O          101   0.254   2.667  fifo/rclk_GND_2_o_mux_373_OUT<0>111 (fifo/rclk_GND_2_o_mux_373_OUT<0>11)
+     LUT6:I0->O            1   0.254   0.682  fifo/rclk_GND_2_o_mux_373_OUT<376>41 (fifo/rclk_GND_2_o_mux_373_OUT<376>41)
+     LUT5:I4->O            8   0.254   1.052  fifo/rclk_GND_2_o_mux_373_OUT<376>42 (fifo/rclk_GND_2_o_mux_373_OUT<376>4)
+     LUT5:I3->O            1   0.250   0.000  fifo/rclk_GND_2_o_mux_373_OUT<383>1 (fifo/rclk_GND_2_o_mux_373_OUT<383>)
+     FDE:D                     0.074          fifo/f_52_383
     ----------------------------------------
-    Total                      9.506ns (2.414ns logic, 7.092ns route)
-                                       (25.4% logic, 74.6% route)
+    Total                      9.076ns (2.414ns logic, 6.662ns route)
+                                       (26.6% logic, 73.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fifo/orwr'
@@ -598,7 +594,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    6.617|         |         |         |
+clk            |    6.655|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock fifo/dato_G
@@ -630,9 +626,9 @@ Clock to Setup on destination clock fifo/orwr
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    8.357|         |         |         |
-fifo/empy_G    |         |    7.329|         |         |
-fifo/full_G    |         |    8.552|         |         |
+clk            |    8.505|         |         |         |
+fifo/empy_G    |         |    7.538|         |         |
+fifo/full_G    |         |    8.724|         |         |
 fifo/orwr      |    6.899|         |         |         |
 ---------------+---------+---------+---------+---------+
 
@@ -640,14 +636,14 @@ fifo/orwr      |    6.899|         |         |         |
 
 
 Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.12 secs
+Total CPU time to Xst completion: 12.30 secs
  
 --> 
 
 
-Total memory usage is 405920 kilobytes
+Total memory usage is 405844 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   36 (   0 filtered)
+Number of warnings :   32 (   0 filtered)
 Number of infos    :    4 (   0 filtered)
 

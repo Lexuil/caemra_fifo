@@ -1,7 +1,7 @@
 module FIFO
 	#(
 		parameter DATO_WIDTH = 8,
-		parameter FIFO_LENGTH = 53
+		parameter FIFO_LENGTH = 100
 	)(
 		input wclk,
 		input [DATO_WIDTH-1:0] datin,
@@ -90,7 +90,7 @@ module FIFO
 	end
 	
 	always @(*) begin
-		orwr = wclk | rclk | rst;
+		orwr <= wclk | rclk | rst;
 		if(cont == 0) begin
 			empy = 1;
 			dato = 0;

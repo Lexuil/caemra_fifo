@@ -5,9 +5,6 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1016" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 42: Port <arg fmt="%s" index="1">rx_ack</arg> is not connected to this instance
-</msg>
-
 <msg type="warning" file="HDLCompiler" num="872" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 19: Using initial value of <arg fmt="%s" index="1">tx_data</arg> since it is never assigned
 </msg>
 
@@ -29,28 +26,22 @@
 <msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/uart.v" Line 140: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 50: Assignment to <arg fmt="%s" index="1">rx_avail</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 52: Assignment to <arg fmt="%s" index="1">rx_error</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 51: Assignment to <arg fmt="%s" index="1">rx_error</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 54: Assignment to <arg fmt="%s" index="1">rx_busy</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 55: Assignment to <arg fmt="%s" index="1">tx_busy</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 57: Assignment to <arg fmt="%s" index="1">tx_busy</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="552" delta="new" >"/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v" Line 42: Input port <arg fmt="%s" index="1">rx_ack</arg> is not connected on this instance
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v</arg>&quot; line <arg fmt="%s" index="2">43</arg>: Output port &lt;<arg fmt="%s" index="3">rx_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">peri</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2898" delta="new" >Port &apos;<arg fmt="%s" index="1">rx_ack</arg>&apos;, unconnected in block instance &apos;<arg fmt="%s" index="2">peri</arg>&apos;, is tied to GND.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v</arg>&quot; line <arg fmt="%s" index="2">43</arg>: Output port &lt;<arg fmt="%s" index="3">rx_busy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">peri</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v</arg>&quot; line <arg fmt="%s" index="2">42</arg>: Output port &lt;<arg fmt="%s" index="3">rx_avail</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">peri</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v</arg>&quot; line <arg fmt="%s" index="2">42</arg>: Output port &lt;<arg fmt="%s" index="3">rx_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">peri</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v</arg>&quot; line <arg fmt="%s" index="2">42</arg>: Output port &lt;<arg fmt="%s" index="3">tx_busy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">peri</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/lexuil/Documents/Github/camera_fifo/camera_fifo.v</arg>&quot; line <arg fmt="%s" index="2">43</arg>: Output port &lt;<arg fmt="%s" index="3">tx_busy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">peri</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">empy</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -132,9 +123,6 @@ Xilinx highly recommends one of the following:
        4) Use the -async_to_sync option to transform the asynchronous
           set/reset to synchronous operation
           (timing simulation highly recommended when using this option)
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">peri/rx_avail</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">camera_fifo</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">peri/rx_error</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">camera_fifo</arg>&gt;.

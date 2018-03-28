@@ -22,13 +22,14 @@ module camera_fifo(clk, reset, tx, rx, datout, rclk, empy, dato, full);
 	wire rx_busy;
 	wire tx_busy;
 	wire rx_error;
+	wire rx_ack;
 	
 	FIFO #(
 		.DATO_WIDTH(8),
 		.FIFO_LENGTH(53)
 
 	) fifo(
-		.wclk(wclk),
+		.wclk(rx_avail),
 		.datin(rx_data), 
 		.rclk(rclk),
 		.datout(datout), 
@@ -49,30 +50,18 @@ module camera_fifo(clk, reset, tx, rx, datout, rclk, empy, dato, full);
 		.rx_data(rx_data),
 		.rx_avail(rx_avail),
 		.rx_error(rx_error),
+		.rx_ack(rx_ack),
 		.rx_busy(rx_busy),
 		.tx_data(tx_data),
 		.tx_wr(tx_wr),
 		.tx_busy(tx_busy)
 	);
-	
-	/*always @(negedge rx_busy) begin
-		if(rx_avail == 1) begin
-			datin <= rx_data;
-			wr <= 1;
-			wclk <= 1;
-		end
-	end
-	
-	always @(posedge rx_busy) begin
-		wclk <= 0;
-		wr <= 0;
-	end*/
 
 	reg w = 0;
-	assign wclk = ~rx_busy & w;
+	assign rx_ack = rx_avail & w;
 
-	always @(posedge clk) begin
-		if(~rx_busy) begin
+	always @(posedge clk) begin///probar con ack
+		if(~rx_avail) begin
 			w <= 0;
 		end else begin
 			w <= 1;
@@ -80,6 +69,20 @@ module camera_fifo(clk, reset, tx, rx, datout, rclk, empy, dato, full);
 	end
 
 	/*
+	always @(posedge clk) begin
+		rx_ack <= rx_avail;
+	end
+
+	reg w = 0;
+	assign wclk = ~rx_busy & w;
+
+	always @(posedge clk) begin///probar con ack
+		if(~rx_busy) begin
+			w <= 0;
+		end else begin
+			w <= 1;
+		end
+	end
 
 	always @(*) begin
 		tx_data <= rx_data;

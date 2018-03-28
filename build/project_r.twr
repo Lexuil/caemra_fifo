@@ -44,14 +44,14 @@ Clock rclk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-datout<0>   |        13.281(R)|      SLOW  |         5.878(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<1>   |        13.274(R)|      SLOW  |         5.871(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<2>   |        13.278(R)|      SLOW  |         5.875(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<3>   |        13.286(R)|      SLOW  |         5.883(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<4>   |        13.286(R)|      SLOW  |         5.883(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<5>   |        13.282(R)|      SLOW  |         5.879(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<6>   |        13.340(R)|      SLOW  |         5.937(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<7>   |        13.336(R)|      SLOW  |         5.933(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<0>   |        13.736(R)|      SLOW  |         6.289(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<1>   |        13.729(R)|      SLOW  |         6.282(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<2>   |        13.733(R)|      SLOW  |         6.286(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<3>   |        13.741(R)|      SLOW  |         6.294(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<4>   |        13.741(R)|      SLOW  |         6.294(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<5>   |        13.737(R)|      SLOW  |         6.290(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<6>   |        13.795(R)|      SLOW  |         6.348(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<7>   |        13.791(R)|      SLOW  |         6.344(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock reset to Pad
@@ -59,14 +59,14 @@ Clock reset to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-datout<0>   |        13.408(R)|      SLOW  |         5.918(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<1>   |        13.401(R)|      SLOW  |         5.911(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<2>   |        13.405(R)|      SLOW  |         5.915(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<3>   |        13.413(R)|      SLOW  |         5.923(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<4>   |        13.413(R)|      SLOW  |         5.923(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<5>   |        13.409(R)|      SLOW  |         5.919(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<6>   |        13.467(R)|      SLOW  |         5.977(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
-datout<7>   |        13.463(R)|      SLOW  |         5.973(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<0>   |        13.727(R)|      SLOW  |         6.065(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<1>   |        13.720(R)|      SLOW  |         6.058(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<2>   |        13.724(R)|      SLOW  |         6.062(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<3>   |        13.732(R)|      SLOW  |         6.070(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<4>   |        13.732(R)|      SLOW  |         6.070(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<5>   |        13.728(R)|      SLOW  |         6.066(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<6>   |        13.786(R)|      SLOW  |         6.124(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
+datout<7>   |        13.782(R)|      SLOW  |         6.120(R)|      FAST  |fifo/orwr_BUFG    |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -74,8 +74,8 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.356|         |         |         |
-reset          |    7.680|    7.680|         |         |
+clk            |    4.778|         |         |         |
+reset          |    9.081|    9.081|         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock rclk
@@ -83,9 +83,9 @@ Clock to Setup on destination clock rclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    9.774|         |         |         |
-rclk           |    9.509|    5.293|         |         |
-reset          |    9.509|    5.511|         |         |
+clk            |   10.575|         |         |         |
+rclk           |    9.019|    4.900|         |         |
+reset          |    9.019|    5.094|         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock reset
@@ -93,13 +93,13 @@ Clock to Setup on destination clock reset
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    9.774|         |         |         |
-rclk           |    9.509|    5.175|         |         |
-reset          |    9.509|    5.393|         |         |
+clk            |   10.575|         |         |         |
+rclk           |    9.019|    4.932|         |         |
+reset          |    9.019|    5.126|         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue Mar 20 19:47:12 2018 
+Analysis completed Wed Mar 28 14:12:49 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
